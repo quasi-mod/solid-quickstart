@@ -3,43 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Fonts Test</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Font Test: @import</title>
 
     <style>
-        /* The @font-face rule is no longer needed! */
-        
+        /* 1. Import the Google Fonts stylesheet directly into the CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
         body {
-            font-family: sans-serif; /* A fallback font */
+            font-family: sans-serif;
             padding: 2rem;
             text-align: center;
         }
+        
+        .demo-text {
+            font-size: 2.2rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
 
-        /* 2. Apply the Google Font using the name provided by Google */
-        .custom-font-text {
-            font-family: 'Poppins', sans-serif; /* Use 'Poppins' */
-            font-size: 2.5rem;
-            font-weight: 700; /* We requested the '700' weight */
-            color: #333;
+        /* 2. Apply the imported font (Poppins) */
+        .web-font-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #D81B60; /* Pink */
+        }
+
+        .system-font-text {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1E88E5; /* Blue */
         }
 
         .default-font-text {
-            font-size: 2.5rem;
-            color: #999;
+            /* Uses browser's default sans-serif */
+            color: #999; /* Gray */
         }
-
     </style>
 </head>
 <body>
 
-    <h1>Google Fonts Test Page 🧑‍💻</h1>
+    <h1>Font Stack Test using @import 👍</h1>
 
-    <p class="custom-font-text">This text uses the 'Poppins' webfont.</p>
+    <p class="demo-text web-font-text">
+        This uses a <strong>Google Webfont</strong> (Poppins).
+    </p>
 
-    <p class="default-font-text">This text uses the default sans-serif font.</p>
+    <p class="demo-text system-font-text">
+        This uses the <strong>System UI Font</strong>.
+    </p>
+    
+    <p class="demo-text default-font-text">
+        This uses the browser's <strong>Default Fallback Font</strong>.
+    </p>
 
 </body>
 </html>
