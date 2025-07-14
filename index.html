@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <title>Solid App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Fonts Test</title>
 
-    <script src="/src/index.tsx" type="module"></script>
-  </body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* The @font-face rule is no longer needed! */
+        
+        body {
+            font-family: sans-serif; /* A fallback font */
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* 2. Apply the Google Font using the name provided by Google */
+        .custom-font-text {
+            font-family: 'Poppins', sans-serif; /* Use 'Poppins' */
+            font-size: 2.5rem;
+            font-weight: 700; /* We requested the '700' weight */
+            color: #333;
+        }
+
+        .default-font-text {
+            font-size: 2.5rem;
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Google Fonts Test Page 🧑‍💻</h1>
+
+    <p class="custom-font-text">This text uses the 'Poppins' webfont.</p>
+
+    <p class="default-font-text">This text uses the default sans-serif font.</p>
+
+</body>
 </html>
