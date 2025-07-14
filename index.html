@@ -3,46 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Test: @import</title>
+    <title>Combined Font & Image Demo</title>
 
     <style>
-        /* 1. Import the Google Fonts stylesheet directly into the CSS */
+        /* Import the Google Fonts stylesheet */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
         body {
-            font-family: sans-serif;
-            padding: 2rem;
+            font-family: system-ui, sans-serif; /* Set a modern default */
             text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+
+        /* Styles for the "doodle" image container */
+        .doodle-container {
+            margin-bottom: 2rem;
         }
         
+        /* Shared styling for the font demo paragraphs */
         .demo-text {
             font-size: 2.2rem;
             border-top: 1px solid #eee;
-            padding-top: 1rem;
-            margin-top: 1rem;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
         }
 
-        /* 2. Apply the imported font (Poppins) */
+        /* 1. Google Webfont (Poppins) */
         .web-font-text {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             color: #D81B60; /* Pink */
         }
 
+        /* 2. System Font Stack */
         .system-font-text {
+            /* This explicitly uses the OS's native font */
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: #1E88E5; /* Blue */
         }
 
+        /* 3. Browser's Default Font */
         .default-font-text {
-            /* Uses browser's default sans-serif */
+            /* We need to reset the font-family from the body to see the difference */
+            font-family: sans-serif; 
             color: #999; /* Gray */
         }
     </style>
 </head>
 <body>
 
-    <h1>Font Stack Test using @import 👍</h1>
+    <div class="doodle-container">
+        <img 
+            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" 
+            alt="The official Google logo" 
+            width="272" 
+            height="92">
+    </div>
+
+    <h1>Font Stack Test 🎨</h1>
 
     <p class="demo-text web-font-text">
         This uses a <strong>Google Webfont</strong> (Poppins).
