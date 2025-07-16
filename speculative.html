@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speculation Rules Prerender Demo</title>
+    
+    <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "source": "list",
+          "urls": ["https://quasimodjsplayground.netlify.app/"]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 20px; }
+        code { background-color: #f4f4f4; padding: 2px 5px; border-radius: 4px; }
+        .verification { margin-top: 40px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <h1>Speculation Rules Prerender Demo</h1>
+
+    <p>
+        This page has a speculation rule defined in its <code>&lt;head&gt;</code>. As soon as this page loads, it instructs the browser to begin prerendering the target page in the background.
+    </p>
+    
+    <p>
+        When you click the link below, the navigation should be almost instantaneous because the page has already been loaded and rendered.
+    </p>
+
+    <a href="https://quasimodjsplayground.netlify.app/">
+        Click here to navigate to the prerendered page
+    </a>
+
+    <div class="verification">
+        <h3>How to Verify it's Working</h3>
+        <ol>
+            <li>Open this page in Google Chrome.</li>
+            <li>Right-click anywhere and select "Inspect" to open DevTools.</li>
+            <li>Go to the <strong>Application</strong> panel.</li>
+            <li>On the left menu, scroll down to <strong>Background Services</strong> and click on <strong>Speculative loads</strong>.</li>
+            <li>You should see a row for <code>https://quasimodjsplayground.netlify.app/</code> with the "Action" as <code>Prerender</code> and the "Status" as <code>Success</code>.</li>
+        </ol>
+    </div>
+
+</body>
+</html>
