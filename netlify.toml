@@ -4,3 +4,8 @@
   publish = "dist"
 
   ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/
+
+[[redirects]]
+  from = "/speculative"  # The URL path you want to block from prerendering
+  to = "/speculative.html"
+  status = 200 # This makes it a rewrite, not a redirect
